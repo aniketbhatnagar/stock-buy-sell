@@ -1,0 +1,9 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET /public/*file controllers.Assets.at(path="/public", file)
+
+POST /services/buy   citadel.controllers.BuySellController.buyStock
+POST /services/sell   citadel.controllers.BuySellController.sellStock
+
