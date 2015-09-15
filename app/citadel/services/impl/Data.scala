@@ -21,7 +21,7 @@ object Data {
     parser
   }
   private val dataFileStream = this.getClass.getClassLoader.getResourceAsStream("data.txt")
-  private val dataTSV = Source.fromInputStream(dataFileStream).getLines()
+  private val dataTSV = Source.fromInputStream(dataFileStream, "UTF-8").getLines()
   val data = dataTSV.drop(1).map(dataLine => {
     val lineSplits = dataLine.split("\t")
     val date = dateParser.parse(lineSplits(0))
